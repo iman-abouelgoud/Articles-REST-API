@@ -14,6 +14,21 @@ class ArticleCollection extends ResourceCollection
      */
     public function toArray(Request $request): array
     {
-        return parent::toArray($request);
+        return [
+            'data' => $this->collection,
+        ];
+    }
+
+    public function with(Request $request)
+    {
+        return [
+            'status' => 'success',
+        ];
+    }
+
+    public function withResponse(Request $request, \Illuminate\Http\JsonResponse $response)
+    {
+        $response->header('Accept', 'application/json');
+        $response->header('Version', 'V1');
     }
 }

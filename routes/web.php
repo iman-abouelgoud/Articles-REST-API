@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\Api\V1\ArticleController;
+use App\Http\Resources\V1\ArticleCollection;
+use App\Models\Article;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,5 +19,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return ['Laravel' => app()->version()];
 });
+
+// Route::get('/test/{article}', [ArticleController::class, 'show']);
 
 require __DIR__.'/auth.php';
