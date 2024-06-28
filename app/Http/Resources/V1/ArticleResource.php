@@ -40,5 +40,6 @@ class ArticleResource extends JsonResource
     public function withResponse(Request $request, \Illuminate\Http\JsonResponse $response)
     {
         $response->header('Accept', 'application/json');
+        $response->header('Version', 'V1');
     }
 }
