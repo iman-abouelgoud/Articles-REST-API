@@ -38,9 +38,9 @@ class RouteServiceProvider extends ServiceProvider
                 ->group(base_path('routes/web.php'));
         });
 
-        
+
         Route::bind('article', function($value) {
-            return Article::whereID($value)->orWhereSlug($value)->firstOrFail();
+            return Article::where('id', $value)->orWhere('slug', $value)->firstOrFail();
         });
     }
 }

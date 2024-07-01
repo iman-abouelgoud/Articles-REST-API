@@ -19,9 +19,12 @@ Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::group(['prefix' => 'v1', 'middleware' => 'auth:sanctum'], function(){
+Route::group([
+    'prefix' => 'v1',
+    // 'middleware' => 'auth:sanctum'
+    ], function(){
 
-    Route::apiResource('/aricles', ArticleController::class);
+    Route::apiResource('/articles', ArticleController::class);
 
     Route::get('/users/{user}', [ArticleController::class, 'show'])->name('users.show');
 
