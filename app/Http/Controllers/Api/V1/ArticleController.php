@@ -49,7 +49,7 @@ class ArticleController extends Controller
     public function update(UpdateArticleRequest $request, Article $article)
     {
         $validated = $request->validated();
-        $validated['slug'] = Str::slug($validated['title']);
+        $validated['slug'] = isset($validated['title']) ? Str::slug($validated['title']) : $article->slug;
         $validated['user_id'] = auth()->id() ?? 1;
 
         $article->update($validated);
@@ -64,7 +64,7 @@ class ArticleController extends Controller
     {
         $article->delete();
 
-        // return response()->json(null, 204);
-        return response()->setStatusCode(204);
+        return response()->json(null, 204);
+        // return response()->setStatusCode(204);
     }
 }

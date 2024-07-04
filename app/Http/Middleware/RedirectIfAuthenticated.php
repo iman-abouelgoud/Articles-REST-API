@@ -21,10 +21,17 @@ class RedirectIfAuthenticated
 
         foreach ($guards as $guard) {
             if (Auth::guard($guard)->check()) {
+
+                if ($request->is('api/*')) {
+                    return response()->json([
+                        'message' => 'Already authenticated',
+                        // 'redirect_to' => route('dashboard'),
+                    ], 200);
+                }
+
                 return redirect(RouteServiceProvider::HOME);
             }
         }
-
         return $next($request);
     }
 }

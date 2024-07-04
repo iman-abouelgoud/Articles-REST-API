@@ -2,7 +2,9 @@
 
 namespace App\Http\Requests;
 
+use App\Models\Article;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class UpdateArticleRequest extends FormRequest
 {
@@ -22,8 +24,8 @@ class UpdateArticleRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'title' => ['required', 'max:20', 'unique:articles,title,except,'.$this->article->title],
-            // 'title' => ['required', 'max:20', Rule::unique('articles', 'title')->ignore($user->id)],
+            'title' => ['sometimes', 'max:20', 'unique:articles,title,' . $this->article->id],
+            // 'title' => ['sometimes', 'max:20', Rule::unique('articles', 'title')->ignore($articleId)],
             'body' => ['required', 'min:5'],
         ];
     }
