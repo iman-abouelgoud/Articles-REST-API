@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\V1\ArticleController;
+use App\Http\Controllers\Api\V1\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -15,9 +16,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {
-    return $request->user();
-});
+// Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {
+//     return $request->user();
+// });
 
 
 Route::group([
@@ -27,6 +28,10 @@ Route::group([
 
     Route::apiResource('/articles', ArticleController::class);
 
-    Route::get('/users/{user}', [ArticleController::class, 'show'])->name('users.show');
+    // Route::get('/articles/users/{user}', [UserController::class, 'show'])->name('users.show');
+
+    Route::get('/user', function (Request $request) {
+        return $request->user();
+    });
 
 });

@@ -25,7 +25,6 @@ class RedirectIfAuthenticated
                 if ($request->is('api/*')) {
                     return response()->json([
                         'message' => 'Already authenticated',
-                        // 'redirect_to' => route('dashboard'),
                     ], 200);
                 }
 
