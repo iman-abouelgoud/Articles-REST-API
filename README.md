@@ -12,7 +12,7 @@ A REST API Articles solution built with Laravel, featuring listing, creating, ad
 - Delete a specific article.
 - Authenticate user and get token.
 - Register a new user.
-- Logout user and delte the token.
+- Logout user and delete the token.
 - Get the authenticated user's details.
 
 
