@@ -5,15 +5,15 @@ A REST API Articles solution built with Laravel, featuring listing, creating, ad
 
 ## Features
 
-- Get All Articles
-- get an Article
-- Create An Article
-- Update An Article
-- Delete An Article
-- Login A User
-- Register A User
-- Get The Logged In User
-- Logout The User
+- Retrieve a list of articles.
+- Create a new article.
+- Retrieve details of a specific article.
+- Update a specific article.
+- Delete a specific article.
+- Authenticate user and get token.
+- Register a new user.
+- Logout user and  delte the token.
+- Get the authenticated user's details. 
 
 
 ## Prerequisites
