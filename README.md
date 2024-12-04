@@ -45,6 +45,7 @@ cp .env.example .env
 php artisan key:generate
 
 # Make sure to update the database configuration in your .env file:
+    * DB_PORT=your_SQL_port
     * DB_DATABASE=your_database_name
     * DB_USERNAME=your_database_username
     * DB_PASSWORD=your_database_password
