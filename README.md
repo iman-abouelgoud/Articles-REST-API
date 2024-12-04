@@ -30,7 +30,7 @@ Follow these steps to install and set up the project locally.
 
 ```bash
 # Clone the repository
-git clone https://github.com/iman-ali-ali/Articles-REST-API-.git
+git clone https://github.com/iman-abouelgoud/Articles-REST-API.git
 
 # Navigate to the project directory
 cd articles
