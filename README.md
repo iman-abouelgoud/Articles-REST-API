@@ -33,7 +33,7 @@ Follow these steps to install and set up the project locally.
 git clone https://github.com/iman-abouelgoud/Articles-REST-API.git
 
 # Navigate to the project directory
-cd articles
+cd Articles-REST-API
      
 # Install dependencies
 composer install
